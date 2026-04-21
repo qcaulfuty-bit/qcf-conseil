@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="QCF Conseil — Gestion de patrimoine indépendante">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1f3c"/>
+      <stop offset="100%" stop-color="#081530"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#c9a84c" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Filet or en haut -->
+  <rect x="80" y="80" width="120" height="2" fill="#c9a84c"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6" fill="#c9a84c" font-weight="700">GESTION DE PATRIMOINE</text>
+
+  <!-- Marque -->
+  <text x="80" y="300" font-family="Georgia, 'Times New Roman', serif" font-size="140" fill="#f8f5ef" font-weight="600">QCF Conseil</text>
+
+  <!-- Slogan -->
+  <text x="80" y="380" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic" fill="#f8f5ef" opacity="0.9">Conseil patrimonial indépendant</text>
+
+  <!-- Ligne dorée séparatrice -->
+  <rect x="80" y="430" width="80" height="2" fill="#c9a84c"/>
+
+  <!-- Trois piliers -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3" fill="#f8f5ef" opacity="0.75" font-weight="400">
+    <text x="80" y="480">INDÉPENDANCE</text>
+    <text x="360" y="480">· RIGUEUR</text>
+    <text x="540" y="480">· LONG TERME</text>
+  </g>
+
+  <!-- Mention réglementaire -->
+  <text x="80" y="570" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#f8f5ef" opacity="0.55">
+    Cabinet inscrit à l'ORIAS · CIF membre d'une association agréée AMF
+  </text>
+
+  <!-- Signature or en bas à droite -->
+  <g transform="translate(1060, 540)">
+    <circle r="50" fill="none" stroke="#c9a84c" stroke-width="2"/>
+    <text x="0" y="8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#c9a84c" font-weight="600">QCF</text>
+  </g>
+</svg>
