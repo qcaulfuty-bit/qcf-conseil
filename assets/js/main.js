@@ -5,6 +5,9 @@
    - Chargement conditionnel de Google Analytics (GA4)
    - Année dynamique dans le footer
    - Marqueur de page active dans le menu
+   - Liens Calendly (popup ou inline)
+   - Formulaire de contact (Formspree, avec garde-fou placeholder)
+   - Pré-sélection du sujet via hash (#sujet=xxx)
    ========================================================= */
 
 (function () {
@@ -138,6 +141,7 @@
   const form = document.querySelector(".contact-form");
   if (form) {
     const status = form.querySelector(".contact-form__status");
+    const actionIsPlaceholder = (form.getAttribute("action") || "").indexOf("[") !== -1;
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -145,6 +149,15 @@
         form.reportValidity();
         return;
       }
+
+      if (actionIsPlaceholder) {
+        if (status) {
+          status.textContent = "Formulaire pas encore connecté (Formspree non configuré). Merci de nous écrire à l'adresse e-mail du cabinet en attendant.";
+          status.dataset.state = "error";
+        }
+        return;
+      }
+
       if (status) {
         status.textContent = "Envoi en cours…";
         status.dataset.state = "pending";
@@ -172,5 +185,44 @@
         }
       }
     });
+  }
+
+  /* ---------- 7. Widget Calendly inline (page contact) ---------- */
+  // Si la page contient un conteneur .calendly-inline-widget dont data-url
+  // n'est pas un placeholder, on s'assure qu'il est bien initialisé. Sinon,
+  // on masque le widget et on révèle le bloc de repli.
+  const calendlyInline = document.getElementById("calendly-widget");
+  const calendlyFallback = document.getElementById("calendly-fallback");
+  if (calendlyInline) {
+    const inlineUrl = calendlyInline.getAttribute("data-url") || "";
+    if (!inlineUrl || inlineUrl.indexOf("[") !== -1) {
+      calendlyInline.style.display = "none";
+      if (calendlyFallback) calendlyFallback.hidden = false;
+    }
+    // Si l'URL est valide, le script widget.js chargé dans contact.html s'en
+    // occupe automatiquement via la classe .calendly-inline-widget.
+  }
+
+  /* ---------- 8. Pré-sélection du sujet depuis le hash ---------- */
+  // Les liens "Discuter de X" dans services.html utilisent #sujet=xxx.
+  // On récupère la valeur et on pré-remplit le <select name="subject">.
+  const hash = window.location.hash || "";
+  const match = hash.match(/sujet=([a-z]+)/i);
+  if (match) {
+    const select = document.getElementById("subject");
+    if (select) {
+      const candidate = match[1].toLowerCase();
+      const has = Array.prototype.some.call(select.options, function (opt) {
+        return opt.value === candidate;
+      });
+      if (has) {
+        select.value = candidate;
+        // On scrolle jusqu'au formulaire pour rendre l'intention visible.
+        const formEl = document.getElementById("contact-form");
+        if (formEl && typeof formEl.scrollIntoView === "function") {
+          formEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }
   }
 })();

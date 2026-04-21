@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — QCF Conseil, prendre rendez-vous</title>
+  <meta name="description" content="Prenez rendez-vous avec QCF Conseil. Formulaire confidentiel, calendrier en ligne, coordonnées du cabinet de gestion de patrimoine.">
+  <meta name="theme-color" content="#0d1f3c">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="QCF Conseil">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Contact — QCF Conseil">
+  <meta property="og:description" content="Premier échange confidentiel et sans engagement. Formulaire et calendrier en ligne.">
+  <meta property="og:image" content="assets/img/og-cover.jpg">
+  <meta property="og:url" content="https://www.qcf-conseil.fr/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — QCF Conseil">
+  <meta name="twitter:description" content="Formulaire confidentiel et prise de rendez-vous en ligne.">
+
+  <link rel="canonical" href="https://www.qcf-conseil.fr/contact.html">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+
+  <script>window.QCF_GA_ID = "[GA_MEASUREMENT_ID]";</script>
+</head>
+<body>
+
+  <a class="sr-only" href="#main">Aller au contenu principal</a>
+
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="nav__brand" href="index.html" aria-label="QCF Conseil — accueil">
+        <span>QCF<span class="nav__brand-mark"> · </span>Conseil</span>
+        <span class="nav__brand-tag">Gestion de patrimoine</span>
+      </a>
+      <button class="nav__toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="primary-nav" class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="index.html">Accueil</a></li>
+        <li class="nav__item"><a class="nav__link" href="services.html">Services</a></li>
+        <li class="nav__item"><a class="nav__link" href="about.html">Cabinet</a></li>
+        <li class="nav__item"><a class="nav__link is-active" href="contact.html">Contact</a></li>
+        <li class="nav__item"><a class="btn btn--gold nav__cta" href="#calendly" data-calendly-scroll>Prendre rendez-vous</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="page-header">
+      <div class="container container--narrow">
+        <h1>Nous contacter</h1>
+        <p>
+          Un premier échange, confidentiel et sans engagement. Nous répondons
+          personnellement sous 48 heures ouvrées.
+        </p>
+      </div>
+    </section>
+
+    <!-- Formulaire + infos -->
+    <section class="section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div>
+            <div class="section__head" style="margin-bottom: 24px;">
+              <p class="section__eyebrow">Formulaire</p>
+              <h2 class="section__title" id="form-title">Décrivez-nous votre situation</h2>
+            </div>
+
+            <form
+              class="contact-form"
+              id="contact-form"
+              action="https://formspree.io/f/[FORMSPREE_ID]"
+              method="POST"
+              novalidate>
+
+              <div class="contact-form__row">
+                <div class="contact-form__field">
+                  <label for="firstname">Prénom</label>
+                  <input type="text" id="firstname" name="firstname" autocomplete="given-name" required>
+                </div>
+                <div class="contact-form__field">
+                  <label for="lastname">Nom</label>
+                  <input type="text" id="lastname" name="lastname" autocomplete="family-name" required>
+                </div>
+              </div>
+
+              <div class="contact-form__row">
+                <div class="contact-form__field">
+                  <label for="email">E-mail</label>
+                  <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+                <div class="contact-form__field">
+                  <label for="phone">Téléphone</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="contact-form__field">
+                <label for="subject">Sujet</label>
+                <select id="subject" name="subject" required>
+                  <option value="">— Choisir un sujet —</option>
+                  <option value="bilan">Bilan patrimonial</option>
+                  <option value="fiscalite">Optimisation fiscale</option>
+                  <option value="immobilier">Investissement immobilier</option>
+                  <option value="retraite">Préparation retraite</option>
+                  <option value="transmission">Transmission &amp; succession</option>
+                  <option value="placements">Placements financiers</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="contact-form__field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Décrivez en quelques lignes votre situation et vos objectifs." required></textarea>
+              </div>
+
+              <label class="contact-form__consent">
+                <input type="checkbox" id="consent" name="consent" required>
+                <span>
+                  J'accepte que QCF Conseil traite les informations ci-dessus
+                  pour répondre à ma demande. Voir la
+                  <a href="mentions-legales.html">politique de confidentialité</a>.
+                </span>
+              </label>
+
+              <button type="submit" class="btn btn--gold contact-form__submit">
+                Envoyer mon message
+              </button>
+
+              <div class="contact-form__status" id="contact-form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <aside class="contact-info" aria-label="Coordonnées">
+            <h3>Coordonnées</h3>
+            <dl>
+              <dt>Adresse</dt>
+              <dd>[ADRESSE]</dd>
+
+              <dt>Téléphone</dt>
+              <dd><a href="tel:[TELEPHONE]">[TELEPHONE]</a></dd>
+
+              <dt>E-mail</dt>
+              <dd><a href="mailto:[EMAIL]">[EMAIL]</a></dd>
+
+              <dt>Horaires</dt>
+              <dd>Lundi — Vendredi · 9h — 19h<br>Samedi sur rendez-vous</dd>
+
+              <dt>Rendez-vous</dt>
+              <dd>En cabinet, en visioconférence, ou à votre domicile sur demande.</dd>
+            </dl>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendly -->
+    <section class="calendly-section" id="calendly" aria-labelledby="calendly-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Prise de rendez-vous</p>
+          <h2 class="section__title" id="calendly-title">Choisissez un créneau</h2>
+        </div>
+
+        <div
+          class="calendly-inline-widget"
+          id="calendly-widget"
+          data-url="[CALENDLY_URL]"
+          aria-label="Calendrier de prise de rendez-vous">
+        </div>
+
+        <div class="calendly-fallback" id="calendly-fallback" hidden>
+          <strong>Prise de rendez-vous en ligne — bientôt disponible</strong>
+          En attendant, écrivez-nous à
+          <a href="mailto:[EMAIL]">[EMAIL]</a> ou appelez le
+          <a href="tel:[TELEPHONE]">[TELEPHONE]</a>.
+        </div>
+      </div>
+    </section>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand">QCF Conseil</div>
+          <p class="footer__slogan">Conseil patrimonial indépendant.</p>
+          <p style="color: rgba(248,245,239,0.7); font-size: 0.88rem;">
+            Cabinet dédié à l'accompagnement patrimonial des dirigeants,
+            professions libérales et familles.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">Cabinet</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li>[ADRESSE]</li>
+            <li><a href="tel:[TELEPHONE]">[TELEPHONE]</a></li>
+            <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Nous suivre</h4>
+          <a class="footer__social" href="[LINKEDIN_URL]" target="_blank" rel="noopener" aria-label="LinkedIn QCF Conseil">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__legal">
+        <div>© <span id="year"></span> QCF Conseil — Tous droits réservés.</div>
+        <div>SIRET [SIRET] · ORIAS [ORIAS_NUMBER]</div>
+      </div>
+
+      <p class="footer__disclaimer">
+        QCF Conseil est inscrit au registre unique de l'ORIAS ([ORIAS_NUMBER])
+        en qualité de Conseiller en Investissements Financiers (CIF), adhérent
+        d'une association agréée par l'Autorité des Marchés Financiers (AMF).
+        Les informations présentées sur ce site ne constituent ni une
+        sollicitation, ni une offre de souscription, et ne sauraient se
+        substituer à un conseil personnalisé. Les performances passées ne
+        préjugent pas des performances futures.
+      </p>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies">
+    <p class="cookie-banner__text">
+      <strong>Cookies &amp; mesure d'audience.</strong>
+      Nous utilisons des outils de mesure d'audience (Google Analytics) pour
+      comprendre l'usage du site. Aucun cookie de mesure n'est déposé sans votre
+      accord.
+    </p>
+    <div class="cookie-banner__actions">
+      <button class="cookie-banner__btn" data-cookie-action="accept">Accepter</button>
+      <button class="cookie-banner__btn cookie-banner__btn--ghost" data-cookie-action="refuse">Refuser</button>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
