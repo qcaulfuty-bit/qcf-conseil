@@ -30,12 +30,10 @@ Fonts.
 ├── contact.html            # Formulaire Formspree + Calendly inline
 ├── mentions-legales.html   # Mentions légales ORIAS / CIF / AMF
 ├── vercel.json             # Clean URLs, redirections, headers de sécurité
-├── assets/
-│   ├── css/style.css       # Feuille de style unique
-│   ├── js/main.js          # Nav mobile, cookies, GA conditionnel, formulaire
-│   └── img/                # favicon.svg + og-cover.svg
-└── .github/workflows/
-    └── deploy.yml          # Déploiement auto GitHub → Vercel
+└── assets/
+    ├── css/style.css       # Feuille de style unique
+    ├── js/main.js          # Nav mobile, cookies, GA conditionnel, formulaire
+    └── img/                # favicon.svg + og-cover.svg
 ```
 
 ## Lancer le site en local
@@ -53,10 +51,7 @@ python3 -m http.server 8000
 
 ## Déploiement sur Vercel
 
-Deux approches au choix — **ne pas activer les deux simultanément** (double
-déploiement à chaque push).
-
-### Option A · Git Integration Vercel (recommandée, zéro config)
+Site statique déployé via la **Git Integration Vercel** — zéro config.
 
 1. Se connecter à [vercel.com](https://vercel.com) et cliquer **Add New → Project**.
 2. Importer le repo GitHub `qcaulfuty-bit/qcf-conseil`.
@@ -64,59 +59,14 @@ déploiement à chaque push).
 4. **Root Directory** : `./` (défaut).
 5. **Build Command** : laisser vide.
 6. **Output Directory** : laisser vide.
-7. Cliquer **Deploy** — Vercel déploie automatiquement à chaque push sur
-   `main` (production) et crée une URL de preview pour chaque PR.
+7. Cliquer **Deploy**.
 
-Avec cette approche, le fichier `.github/workflows/deploy.yml` doit être
-supprimé ou désactivé pour éviter les déploiements doublons.
+À partir de là :
 
-### Option B · GitHub Actions → Vercel CLI
-
-Utile si l'on veut ajouter des étapes de vérification (tests, lint, audit
-d'accessibilité) avant déploiement.
-
-1. Créer un token Vercel : [vercel.com/account/tokens](https://vercel.com/account/tokens).
-2. En local, lier le projet pour récupérer `orgId` et `projectId` :
-   ```bash
-   npx vercel link
-   cat .vercel/project.json   # note orgId et projectId
-   ```
-3. Dans GitHub, **Settings → Secrets and variables → Actions**, ajouter :
-   - `VERCEL_TOKEN`
-   - `VERCEL_ORG_ID`
-   - `VERCEL_PROJECT_ID`
-4. Désactiver la Git Integration côté Vercel (Project → Settings → Git →
-   Disconnect) pour éviter le double déploiement.
-5. Chaque push sur `main` déclenche un déploiement production ; chaque PR
-   génère une preview URL et un commentaire automatique sur la PR.
-
-### Variables d'environnement à définir dans le dashboard Vercel
-
-À configurer dans **Project → Settings → Environment Variables**, puis
-référencer dans les pages HTML / le JS à la place des placeholders.
-
-> **Attention** — un site statique pur n'interprète pas les variables
-> d'environnement au runtime. Deux stratégies possibles :
->
-> 1. **Build step** qui substitue les placeholders avant déploiement
->    (à ajouter dans `vercel.json` → `buildCommand`).
-> 2. **Substitution manuelle** via `sed` ou un petit script, commitée puis
->    déployée (approche actuelle, la plus simple).
-
-| Nom de la variable      | Placeholder à remplacer | Description                    |
-| ----------------------- | ----------------------- | ------------------------------ |
-| `GA_MEASUREMENT_ID`     | `[GA_MEASUREMENT_ID]`   | ID Google Analytics GA4        |
-| `FORMSPREE_ID`          | `[FORMSPREE_ID]`        | ID Formspree                   |
-| `CALENDLY_URL`          | `[CALENDLY_URL]`        | URL publique Calendly          |
-| `LINKEDIN_URL`          | `[LINKEDIN_URL]`        | URL LinkedIn cabinet           |
-| `ORIAS_NUMBER`          | `[ORIAS_NUMBER]`        | N° ORIAS                       |
-| `SIRET`                 | `[SIRET]`               | SIRET du cabinet               |
-| `ADRESSE`               | `[ADRESSE]`             | Adresse postale                |
-| `TELEPHONE`             | `[TELEPHONE]`           | Numéro de téléphone            |
-| `EMAIL`                 | `[EMAIL]`               | Adresse e-mail                 |
-
-Autres placeholders plus éditoriaux (biographie, dates, noms…) restent en
-substitution manuelle dans les fichiers.
+- Chaque push sur `main` redéploie automatiquement la production.
+- Chaque pull request génère une URL de preview isolée.
+- Le fichier `vercel.json` est lu automatiquement (clean URLs, redirections,
+  headers de sécurité).
 
 ### Configuration Vercel (`vercel.json`)
 
@@ -229,7 +179,6 @@ pages.
 - [x] Page **contact** avec formulaire Formspree + Calendly inline.
 - [x] Page mentions légales.
 - [x] Configuration Vercel (`vercel.json`, clean URLs, headers de sécurité).
-- [x] Workflow GitHub Actions de déploiement.
 - [ ] Convertir `og-cover.svg` en `og-cover.jpg` pour support OG complet.
 - [ ] Remplacer tous les placeholders `[MAJUSCULES]` par les infos réelles
       avant mise en ligne.
