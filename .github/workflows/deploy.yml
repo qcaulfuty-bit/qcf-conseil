@@ -1,0 +1,88 @@
+name: Deploy to Vercel
+
+# Déploiement automatique sur Vercel à chaque push sur `main`
+# (production) et à chaque pull request (preview URL).
+#
+# Prérequis : 3 secrets à configurer dans les paramètres du repo GitHub
+# (Settings → Secrets and variables → Actions → Repository secrets) :
+#   - VERCEL_TOKEN       → https://vercel.com/account/tokens
+#   - VERCEL_ORG_ID      → équipe/user, visible dans `.vercel/project.json`
+#                          après un premier `vercel link` en local
+#   - VERCEL_PROJECT_ID  → même fichier
+#
+# NB : si la Git Integration Vercel (Settings → Git sur le dashboard Vercel)
+# est déjà activée pour ce repo, Vercel déploie déjà automatiquement.
+# Dans ce cas, il faut choisir : soit désactiver la Git Integration, soit
+# désactiver ce workflow. Sinon chaque push déclenche deux déploiements.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy (${{ github.event_name == 'push' && 'prod' || 'preview' }})
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel environment (production)
+        if: github.event_name == 'push'
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Pull Vercel environment (preview)
+        if: github.event_name != 'push'
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build (production)
+        if: github.event_name == 'push'
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build (preview)
+        if: github.event_name != 'push'
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        if: github.event_name == 'push'
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy preview
+        if: github.event_name != 'push'
+        id: deploy_preview
+        run: |
+          url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "preview_url=$url" >> "$GITHUB_OUTPUT"
+          echo "Preview URL : $url"
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = "${{ steps.deploy_preview.outputs.preview_url }}";
+            if (!url) return;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Preview Vercel déployée : ${url}`
+            });
