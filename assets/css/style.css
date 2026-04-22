@@ -1,5 +1,5 @@
 /* =========================================================
-   QCF Conseil — Feuille de style principale
+   CF Conseil — Feuille de style principale
    Cabinet de conseil en gestion de patrimoine
    Design : classique, sobre, haut de gamme
    Palette : marine / or / crème
@@ -651,26 +651,39 @@ ul {
 
 .partner {
   flex-shrink: 0;
-  height: 38px;
-  line-height: 38px;
   display: inline-flex;
   align-items: center;
+  height: 40px;
+}
+
+.partner__logo {
+  max-height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.72;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner:hover .partner__logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.partner__name {
   font-family: var(--ff-body);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--c-muted);
   white-space: nowrap;
-  filter: grayscale(100%);
-  opacity: 0.72;
-  transition: color var(--t-fast), opacity var(--t-fast), filter var(--t-fast);
+  line-height: 36px;
+  transition: color 0.3s ease;
 }
 
-.partner:hover {
+.partner:hover .partner__name {
   color: var(--c-or-dark);
-  opacity: 1;
-  filter: grayscale(0%);
 }
 
 @keyframes partnersScroll {
@@ -1186,17 +1199,23 @@ ul {
 }
 
 .bio__portrait {
-  width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center top;
   background: var(--c-creme-dark);
-  border: 2px solid var(--c-or);
+  border: 3px solid var(--c-or);
   box-shadow: 0 10px 36px rgba(13, 31, 60, 0.18);
   justify-self: center;
   align-self: start;
+}
+
+@media (max-width: 820px) {
+  .bio__portrait {
+    width: 260px;
+    height: 260px;
+  }
 }
 
 .bio__name {

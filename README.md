@@ -1,6 +1,6 @@
-# QCF Conseil
+# CF Conseil
 
-Site vitrine du cabinet **QCF Conseil** — gestion de patrimoine indépendante.
+Site vitrine du cabinet **CF Conseil** — gestion de patrimoine indépendante.
 
 Site statique construit en **HTML / CSS / JavaScript vanilla**, sans build, sans
 framework, sans dépendance npm. Chaque page est autonome et peut être ouverte

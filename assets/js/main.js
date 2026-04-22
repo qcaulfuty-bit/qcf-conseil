@@ -1,5 +1,5 @@
 /* =========================================================
-   QCF Conseil — main.js
+   CF Conseil — main.js
    - Navigation mobile
    - Bannière cookies RGPD (consentement explicite)
    - Chargement conditionnel de Google Analytics (GA4)
