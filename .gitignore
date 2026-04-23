@@ -38,3 +38,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# video build artifacts
+/public/videos/_frames/
+/public/videos/_audio.wav
+__pycache__/
