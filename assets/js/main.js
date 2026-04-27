@@ -1,5 +1,5 @@
 /* =========================================================
-   CF Conseil — main.js
+   Alvest — main.js
    - Navigation mobile
    - Bannière cookies RGPD (consentement explicite)
    - Chargement conditionnel de Google Analytics (GA4)

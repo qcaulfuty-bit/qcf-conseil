@@ -1,6 +1,6 @@
-# CF Conseil
+# Alvest
 
-Site vitrine du cabinet **CF Conseil** — gestion de patrimoine indépendante.
+Site vitrine du cabinet **Alvest** — gestion de patrimoine indépendante.
 
 Site statique construit en **HTML / CSS / JavaScript vanilla**, sans build, sans
 framework, sans dépendance npm. Chaque page est autonome et peut être ouverte
@@ -9,13 +9,20 @@ statique. Hébergement cible : **Vercel**.
 
 ## Identité visuelle
 
-| Token        | Valeur     | Usage                |
-| ------------ | ---------- | -------------------- |
-| `--c-marine` | `#0d1f3c`  | bleu marine, titres  |
-| `--c-or`     | `#c9a84c`  | doré, accents        |
-| `--c-creme`  | `#f8f5ef`  | fond principal       |
-| `--c-text`   | `#1a1a1a`  | texte courant        |
-| `--c-muted`  | `#5a5a5a`  | texte secondaire     |
+Thème **alpin** : nuit profonde / bronze chaud / blanc glacier / vert pin.
+
+| Token         | Valeur     | Usage                              |
+| ------------- | ---------- | ---------------------------------- |
+| `--c-marine`  | `#0e2a47`  | bleu nuit alpin, titres            |
+| `--c-or`      | `#b08968`  | bronze chaud, accents              |
+| `--c-or-dark` | `#8a6438`  | bronze profond, hover              |
+| `--c-creme`  | `#f4f6f9`  | fond principal, blanc glacier      |
+| `--c-pine`    | `#1f3a30`  | vert pin, sections premium         |
+| `--c-glacier` | `#cfd8e3`  | bleu glacier clair                 |
+| `--c-text`    | `#1a1a1a`  | texte courant                      |
+| `--c-muted`   | `#5a6878`  | texte secondaire                   |
+
+Hero d'accueil : photo Unsplash de chaîne enneigée + voile bleu nuit.
 
 Polices : **Playfair Display** (titres) + **Lato** (corps), chargées via Google
 Fonts.
@@ -24,12 +31,13 @@ Fonts.
 
 ```
 .
-├── index.html              # Accueil (hero, services, témoignages, méthode)
+├── index.html              # Accueil (hero photo montagne, expertises, partenaires, méthode)
 ├── services.html           # 6 services détaillés (ancres #bilan, #fiscalite…)
-├── about.html              # Cabinet (histoire, valeurs, badges réglementaires)
+├── about.html              # Cabinet (bio fondateur, valeurs, parcours)
 ├── contact.html            # Formulaire Formspree + Calendly inline
 ├── mentions-legales.html   # Mentions légales ORIAS / CIF / AMF
-├── vercel.json             # Clean URLs, redirections, headers de sécurité
+├── vercel.json             # Clean URLs, redirections, headers de sécurité (CSP Unsplash)
+├── public/images/          # Portraits, photos personnalisées
 └── assets/
     ├── css/style.css       # Feuille de style unique
     ├── js/main.js          # Nav mobile, cookies, GA conditionnel, formulaire
@@ -87,8 +95,8 @@ Le fichier `vercel.json` définit :
 
 ### Domaine personnalisé
 
-1. Dans **Project → Settings → Domains**, ajouter `www.qcf-conseil.fr` et
-   `qcf-conseil.fr`.
+1. Dans **Project → Settings → Domains**, ajouter `www.alvest.fr` et
+   `alvest.fr`.
 2. Chez le registrar (Gandi, OVH, etc.), créer les enregistrements DNS
    indiqués par Vercel (un `A` + un `CNAME`).
 3. Certificats SSL générés automatiquement par Vercel.
