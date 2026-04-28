@@ -218,8 +218,8 @@ ul {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(248, 245, 239, 0.96);
-  backdrop-filter: saturate(140%) blur(6px);
+  background: rgba(244, 246, 249, 0.94);
+  backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--c-line);
 }
 
@@ -234,22 +234,44 @@ ul {
 
 .nav__brand {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
+  align-items: center;
+  gap: 14px;
   font-family: var(--ff-display);
   color: var(--c-marine);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.nav__logo {
+  width: 38px;
+  height: auto;
+  color: var(--c-marine);
+  flex-shrink: 0;
+}
+
+.nav__brand-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav__brand-text {
+  font-family: var(--ff-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-marine);
+  line-height: 1;
 }
 
 .nav__brand-tag {
   font-family: var(--ff-body);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--c-muted);
+  color: var(--c-or-dark);
+  line-height: 1;
 }
 
 .nav__list {
@@ -533,11 +555,11 @@ ul {
 }
 .service-card--hero h3 { font-size: 1.6rem; }
 
-/* Premium — Assurance-vie luxembourgeoise */
+/* Premium — Assurance-vie luxembourgeoise (vert pin profond) */
 .service-card--premium {
-  background: var(--c-marine);
-  color: rgba(248, 245, 239, 0.88);
-  border-color: var(--c-marine);
+  background: var(--c-pine);
+  color: rgba(244, 246, 249, 0.88);
+  border-color: var(--c-pine);
   padding: 40px 36px;
 }
 .service-card--premium::before {
@@ -933,18 +955,34 @@ ul {
 
 .cookie-banner__btn:hover { background: var(--c-or); border-color: var(--c-or); color: var(--c-marine); }
 
-/* ---------- Pages légales / contenus longs ---------- */
+/* ---------- Page-header alpin (services, about, contact, mentions) ---------- */
 .page-header {
-  padding: 80px 0 40px;
+  position: relative;
+  padding: 120px 0 80px;
   text-align: center;
-  background: var(--c-creme-dark);
-  border-bottom: 1px solid var(--c-line);
+  color: var(--c-white);
+  background:
+    linear-gradient(180deg, rgba(14, 42, 71, 0.72) 0%, rgba(14, 42, 71, 0.92) 100%),
+    url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat;
+  border-bottom: 1px solid rgba(176, 137, 104, 0.4);
 }
 
-.page-header h1 { margin-bottom: 8px; }
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-or), transparent);
+  opacity: 0.7;
+}
+
+.page-header h1 {
+  margin-bottom: 12px;
+  color: var(--c-white);
+}
 
 .page-header p {
-  color: var(--c-muted);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 620px;
   margin: 0 auto;
 }
@@ -1214,22 +1252,22 @@ ul {
 }
 
 .bio__portrait {
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
   object-fit: cover;
-  object-position: center top;
-  background: var(--c-creme-dark);
-  border: 3px solid var(--c-or);
-  box-shadow: 0 10px 36px rgba(13, 31, 60, 0.18);
+  object-position: center 30%;
+  background: var(--c-pine);
+  border: 1px solid rgba(176, 137, 104, 0.5);
+  box-shadow: 0 18px 48px rgba(14, 42, 71, 0.22), 0 0 0 6px rgba(31, 58, 48, 0.04);
   justify-self: center;
   align-self: start;
 }
 
 @media (max-width: 820px) {
   .bio__portrait {
-    width: 260px;
-    height: 260px;
+    max-width: 320px;
   }
 }
 

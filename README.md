@@ -110,7 +110,6 @@ Principaux :
 
 | Placeholder           | Description                                  |
 | --------------------- | -------------------------------------------- |
-| `[ORIAS_NUMBER]`      | Numéro ORIAS du cabinet                      |
 | `[SIRET]`             | SIRET                                        |
 | `[ADRESSE]`           | Adresse postale du cabinet                   |
 | `[TELEPHONE]`         | Numéro de téléphone                          |
