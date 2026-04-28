@@ -41,6 +41,37 @@
     });
   }
 
+  /* ---------- 2bis. Dropdowns nav (Nos solutions / Notre ADN) ---------- */
+  const subToggles = document.querySelectorAll(".nav__sub-toggle");
+  subToggles.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      subToggles.forEach(function (b) {
+        if (b !== btn) b.setAttribute("aria-expanded", "false");
+      });
+      btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+    });
+  });
+
+  // Fermer si clic en dehors d'un dropdown
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav__item--has-sub")) {
+      subToggles.forEach(function (b) {
+        b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
+  // Fermer avec Escape
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      subToggles.forEach(function (b) {
+        b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
   /* ---------- 3. Marqueur de page active ---------- */
   // Si la classe is-active n'a pas été posée à la main, on la déduit de l'URL.
   const path = window.location.pathname.split("/").pop() || "index.html";

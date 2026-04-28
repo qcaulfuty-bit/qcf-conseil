@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services — Alvest, conseil patrimonial sur mesure</title>
   <meta name="description" content="Bilan patrimonial, optimisation fiscale, investissement immobilier, retraite, transmission et placements financiers : six expertises pour structurer votre patrimoine en toute indépendance.">
-  <meta name="theme-color" content="#0e2a47">
+  <meta name="theme-color" content="#0A192F">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Alvest">
@@ -23,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script>window.QCF_GA_ID = "[GA_MEASUREMENT_ID]";</script>
@@ -52,11 +52,30 @@
         <span></span><span></span><span></span>
       </button>
       <ul id="primary-nav" class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="index.html">Accueil</a></li>
-        <li class="nav__item"><a class="nav__link is-active" href="services.html">Services</a></li>
-        <li class="nav__item"><a class="nav__link" href="about.html">Cabinet</a></li>
-        <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
-        <li class="nav__item"><a class="btn btn--gold nav__cta" href="[CALENDLY_URL]" data-calendly>Prendre rendez-vous</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__sub-toggle is-active" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="submenu-solutions">
+            Nos solutions
+            <svg class="nav__chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__submenu" id="submenu-solutions">
+            <li><a href="services.html#assurance-vie">Assurance-vie (FR / LUX)</a></li>
+            <li><a href="services.html#marches-financiers">Marchés financiers</a></li>
+            <li><a href="services.html#private-equity">Private Equity</a></li>
+            <li><a href="services.html#fonds-obligataires">Fonds obligataires</a></li>
+            <li><a href="services.html#actifs-reels">Actifs réels</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="submenu-adn">
+            Notre ADN
+            <svg class="nav__chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__submenu" id="submenu-adn">
+            <li><a href="about.html">Qui sommes-nous</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a class="btn btn--outline-gold nav__cta" href="contact.html">Prendre rendez-vous</a></li>
       </ul>
     </nav>
   </header>

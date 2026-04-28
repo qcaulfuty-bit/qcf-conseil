@@ -6,7 +6,7 @@
   <title>Alvest — Cabinet de gestion de patrimoine indépendant</title>
   <meta name="description" content="Alvest, cabinet indépendant de conseil en gestion de patrimoine. Bilan patrimonial, optimisation fiscale, transmission, investissement immobilier et placements financiers.">
   <meta name="author" content="Alvest">
-  <meta name="theme-color" content="#0e2a47">
+  <meta name="theme-color" content="#0A192F">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
@@ -26,7 +26,7 @@
   <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -87,11 +87,30 @@
       </button>
 
       <ul id="primary-nav" class="nav__list">
-        <li class="nav__item"><a class="nav__link is-active" href="index.html">Accueil</a></li>
-        <li class="nav__item"><a class="nav__link" href="services.html">Services</a></li>
-        <li class="nav__item"><a class="nav__link" href="about.html">Cabinet</a></li>
-        <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
-        <li class="nav__item"><a class="btn btn--gold nav__cta" href="[CALENDLY_URL]" data-calendly>Prendre rendez-vous</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="submenu-solutions">
+            Nos solutions
+            <svg class="nav__chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__submenu" id="submenu-solutions">
+            <li><a href="services.html#assurance-vie">Assurance-vie (FR / LUX)</a></li>
+            <li><a href="services.html#marches-financiers">Marchés financiers</a></li>
+            <li><a href="services.html#private-equity">Private Equity</a></li>
+            <li><a href="services.html#fonds-obligataires">Fonds obligataires</a></li>
+            <li><a href="services.html#actifs-reels">Actifs réels</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--has-sub">
+          <button class="nav__link nav__sub-toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="submenu-adn">
+            Notre ADN
+            <svg class="nav__chevron" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav__submenu" id="submenu-adn">
+            <li><a href="about.html">Qui sommes-nous</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a class="btn btn--outline-gold nav__cta" href="contact.html">Prendre rendez-vous</a></li>
       </ul>
     </nav>
   </header>
@@ -103,144 +122,140 @@
          ========================================================= -->
     <section class="hero">
       <div class="container hero__inner">
-        <span class="hero__kicker">Conseil en gestion de patrimoine — indépendant</span>
         <h1 class="hero__title">
-          Un conseil honnête, une stratégie unique<br>
+          Un conseil transparent, une stratégie unique
           <em>pour votre patrimoine</em>
         </h1>
         <p class="hero__lede">
-          Alvest accompagne salariés, indépendants et familles dans la
-          construction et l'optimisation de leur patrimoine — avec transparence,
-          sans jargon et sans conflit d'intérêts.
+          Alvest accompagne plus de <strong>100 familles</strong>, dirigeants et
+          indépendants dans la structuration et l'optimisation de leur patrimoine.
+          Un conseil sur-mesure, une disponibilité totale.
         </p>
 
         <div class="hero__cta">
-          <a class="btn btn--gold" href="[CALENDLY_URL]" data-calendly>Prendre rendez-vous</a>
-          <a class="btn btn--outline" href="contact.html">Nous contacter</a>
+          <a class="btn btn--gold" href="contact.html">Prendre rendez-vous</a>
+          <a class="btn btn--outline-light" href="#approche">Découvrir nos solutions</a>
         </div>
 
-        <div class="hero__trust" aria-label="Références réglementaires">
-          <span>Conseiller en Investissements Financiers</span>
-          <span>Inscrit ORIAS 24005716</span>
-          <span>Indépendant</span>
-        </div>
+        <p class="hero__regulatory">
+          Conseiller en Investissements Financiers — Inscrit ORIAS n°&nbsp;24005716
+        </p>
       </div>
     </section>
 
     <!-- =========================================================
-         Services — grille éditoriale
-         Rangée 1 : Audit patrimonial (pleine largeur, entrée en relation)
-         Rangée 2 : Placements financiers + Assurance-vie luxembourgeoise (50/50, premium)
-         Rangée 3 : Optimisation fiscale + Retraite + Transmission (tiers standards)
-         Rangée 4 : Investissement immobilier (compact, offre complémentaire)
+         L'Approche Alvest — Ingénierie patrimoniale (sobre & technique)
+         Bloc A : Processus en 3 étapes
+         Bloc B : Manifeste alignement d'intérêts + 4 expertises clés
          ========================================================= -->
-    <section class="section section--alt" id="services" aria-labelledby="services-title">
+    <section class="approche" id="approche" aria-labelledby="approche-title">
       <div class="container">
-        <span class="section-kicker">Nos expertises</span>
-        <h2 id="services-title" class="section-title">Un accompagnement patrimonial complet</h2>
-        <hr class="divider-gold">
-        <p class="section-lede">
-          Sept domaines d'intervention, pensés pour répondre à l'ensemble des
-          enjeux d'un patrimoine familial ou professionnel.
-        </p>
-
-        <div class="services-grid-editorial">
-
-          <!-- Rangée 1 — Audit patrimonial (pleine largeur) -->
-          <a class="service-card service-card--feature" href="services.html#bilan">
-            <div class="service-card__num">01</div>
-            <h3>Audit patrimonial</h3>
-            <p class="service-card__subtitle">Le point de départ de toute stratégie performante.</p>
-            <p>
-              Analyse complète de votre situation financière, fiscale et
-              successorale. Identification des leviers d'optimisation, des
-              risques sous-jacents et des opportunités inexploitées — pour
-              construire une feuille de route patrimoniale sur mesure.
-            </p>
-          </a>
-
-          <!-- Rangée 2 — Placements (cœur de l'offre) -->
-          <a class="service-card service-card--hero" href="services.html#placements">
-            <div class="service-card__num">02</div>
-            <h3>Placements financiers</h3>
-            <p class="service-card__subtitle">Un portefeuille construit pour durer, pas pour paraître.</p>
-            <p>Nous construisons des allocations sur mesure autour de quatre piliers :</p>
-            <ul class="service-card__list">
-              <li><strong>Private equity</strong> — accès à des fonds non cotés sélectionnés (capital-investissement, dette privée, infrastructure).</li>
-              <li><strong>ETF &amp; gestion passive</strong> — diversification mondiale à coût maîtrisé.</li>
-              <li><strong>Mandats d'arbitrage</strong> — gestion pilotée avec suivi actif des arbitrages.</li>
-              <li><strong>Architectures multi-supports</strong> — sélection rigoureuse des véhicules selon votre fiscalité et votre horizon.</li>
-            </ul>
-          </a>
-
-          <!-- Rangée 2 — Assurance-vie luxembourgeoise (différenciateur premium) -->
-          <a class="service-card service-card--premium" href="services.html">
-            <div class="service-card__num">03</div>
-            <h3>Assurance-vie luxembourgeoise</h3>
-            <p class="service-card__subtitle">L'enveloppe d'exception pour les patrimoines exigeants.</p>
-            <p>
-              Le contrat luxembourgeois offre ce que le droit français ne
-              permet pas : triangle de sécurité réglementaire, architecture
-              100&nbsp;% ouverte, accès au private equity et aux fonds
-              institutionnels, portabilité internationale. Une solution
-              réservée aux investisseurs souhaitant allier performance,
-              protection et discrétion.
-            </p>
-          </a>
-
-          <!-- Rangée 3 — Tiers standards -->
-          <a class="service-card service-card--standard" href="services.html#fiscalite">
-            <div class="service-card__num">04</div>
-            <h3>Optimisation fiscale</h3>
-            <p class="service-card__subtitle">Moins subir, mieux arbitrer.</p>
-            <p>
-              IR, IFI, fiscalité du dirigeant et des indépendants — nous
-              identifions les leviers fiscaux pertinents sans jamais
-              sacrifier la cohérence patrimoniale globale.
-            </p>
-          </a>
-
-          <a class="service-card service-card--standard" href="services.html#retraite">
-            <div class="service-card__num">05</div>
-            <h3>Préparation de la retraite</h3>
-            <p class="service-card__subtitle">Ne comptez pas sur le système. Construisez le vôtre.</p>
-            <p>
-              PER, contrats luxembourgeois, immobilier de rendement, actifs
-              financiers diversifiés — nous privilégions la retraite par
-              capitalisation pour constituer un capital transmissible,
-              indépendant des aléas du régime par répartition.
-            </p>
-          </a>
-
-          <a class="service-card service-card--standard" href="services.html#transmission">
-            <div class="service-card__num">06</div>
-            <h3>Transmission <span class="service-card__amp">&amp;</span> succession</h3>
-            <p class="service-card__subtitle">Transmettre sans subir.</p>
-            <p>
-              Donations, pactes Dutreil, démembrement, assurance-vie
-              structurée — nous anticipons la transmission familiale ou
-              d'entreprise pour préserver ce qui a été construit.
-            </p>
-          </a>
-
-          <!-- Rangée 4 — Immobilier (offre complémentaire, moins dominante) -->
-          <a class="service-card service-card--compact" href="services.html#immobilier">
-            <div class="service-card__num">07</div>
-            <h3>Investissement immobilier</h3>
-            <p class="service-card__subtitle">L'immobilier, quand il a sa place dans l'allocation.</p>
-            <p>
-              SCPI, nue-propriété, démembrement — sélection rigoureuse
-              d'actifs locatifs selon votre fiscalité et votre horizon.
-              L'immobilier comme composante d'un portefeuille diversifié,
-              pas comme réflexe par défaut.
-            </p>
-          </a>
-
+        <div class="approche__head">
+          <span class="section-kicker">L'approche Alvest</span>
+          <h2 id="approche-title" class="section-title">Ingénierie patrimoniale, sans compromis</h2>
+          <hr class="divider-gold">
         </div>
 
-        <p style="text-align:center; margin-top: 40px;">
-          <a class="btn btn--outline" href="services.html">Découvrir nos services en détail</a>
-        </p>
+        <!-- Bloc A — Processus -->
+        <div class="approche__block">
+          <p class="approche__sub">Le processus d'accompagnement</p>
+          <div class="process-grid">
+            <article class="process-step">
+              <span class="process-step__num">01</span>
+              <h3>Audit de situation</h3>
+              <p>
+                Analyse de la structure civile et fiscale, définition des
+                objectifs de transmission et établissement d'une feuille de
+                route patrimoniale.
+              </p>
+            </article>
+            <article class="process-step">
+              <span class="process-step__num">02</span>
+              <h3>Ingénierie financière</h3>
+              <p>
+                Construction de portefeuille en architecture ouverte. Sélection
+                d'actifs complexes — Private Equity, Infrastructures, ETF — au
+                service de votre stratégie.
+              </p>
+            </article>
+            <article class="process-step">
+              <span class="process-step__num">03</span>
+              <h3>Pilotage &amp; veille</h3>
+              <p>
+                Reporting régulier, veille réglementaire et fiscale active,
+                réallocation stratégique des actifs en fonction de l'évolution
+                des marchés et de votre situation.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Bloc B — Modèle & expertise (manifeste) -->
+        <div class="approche__block">
+          <p class="approche__sub">Modèle &amp; expertise</p>
+          <blockquote class="manifeste">
+            <p>
+              Le cabinet Alvest privilégie une <strong>facturation de
+              l'expertise</strong> afin de garantir un alignement d'intérêts
+              total. Ce modèle nous permet d'accéder aux classes d'actifs en
+              <strong>Clean Shares</strong> — parts sans rétrocessions de
+              gestion — et aux <strong>fonds institutionnels</strong>
+              habituellement réservés aux investisseurs professionnels.
+            </p>
+          </blockquote>
+
+          <div class="expertises-grid">
+            <article class="expertise">
+              <svg class="expertise__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 5v22M7 27h18M16 8l-7 9h14l-7-9zM3 17l6-9M29 17l-6-9" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <h4>Optimisation fiscale</h4>
+              <p>
+                IR, IFI, fiscalité du dirigeant et des indépendants — réduire
+                la pression fiscale sans dégrader la cohérence patrimoniale.
+              </p>
+            </article>
+
+            <article class="expertise">
+              <svg class="expertise__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="6.5" r="3" stroke="currentColor" stroke-width="1.3" fill="none"/>
+                <circle cx="8" cy="24" r="3" stroke="currentColor" stroke-width="1.3" fill="none"/>
+                <circle cx="24" cy="24" r="3" stroke="currentColor" stroke-width="1.3" fill="none"/>
+                <path d="M16 9.5v5M8 14h16M8 14v7M24 14v7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+              </svg>
+              <h4>Stratégie de transmission</h4>
+              <p>
+                Donations, pactes Dutreil, démembrement, contrat luxembourgeois.
+                Anticiper, plutôt que subir, la fiscalité successorale.
+              </p>
+            </article>
+
+            <article class="expertise">
+              <svg class="expertise__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <rect x="5" y="11" width="22" height="17" stroke="currentColor" stroke-width="1.3" fill="none" rx="1"/>
+                <path d="M12 11V7h8v4M16 16v8M12 20h8" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+              </svg>
+              <h4>Ingénierie du dirigeant</h4>
+              <p>
+                Holding, rémunération, capitalisation des dividendes, cession
+                d'entreprise. La structuration patrimoniale du chef d'entreprise.
+              </p>
+            </article>
+
+            <article class="expertise">
+              <svg class="expertise__icon" viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="16" cy="16" r="11" stroke="currentColor" stroke-width="1.3" fill="none"/>
+                <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.3" fill="none"/>
+                <circle cx="16" cy="16" r="1.6" fill="currentColor"/>
+              </svg>
+              <h4>Actifs de conviction</h4>
+              <p>
+                Private Equity, infrastructure, dette privée, immobilier
+                institutionnel — au-delà des supports financiers classiques.
+              </p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -294,43 +309,6 @@
       </div>
     </section>
 
-    <!-- =========================================================
-         Approche
-         ========================================================= -->
-    <section class="section" id="approche" aria-labelledby="approach-title">
-      <div class="container">
-        <span class="section-kicker">Notre méthode</span>
-        <h2 id="approach-title" class="section-title">Une approche rigoureuse, en quatre temps</h2>
-        <hr class="divider-gold">
-        <p class="section-lede">
-          Chaque mission suit une séquence claire, pensée pour garantir la
-          pertinence des recommandations et la qualité du suivi.
-        </p>
-
-        <div class="approach-steps">
-          <div class="approach-step">
-            <div class="approach-step__num">I.</div>
-            <h3>Écoute</h3>
-            <p>Comprendre vos objectifs de vie, vos contraintes réelles et vos priorités patrimoniales avant toute recommandation.</p>
-          </div>
-          <div class="approach-step">
-            <div class="approach-step__num">II.</div>
-            <h3>Diagnostic</h3>
-            <p>Analyse complète de votre situation — juridique, fiscale, financière et successorale — consolidée dans un bilan écrit.</p>
-          </div>
-          <div class="approach-step">
-            <div class="approach-step__num">III.</div>
-            <h3>Préconisations</h3>
-            <p>Proposition d'une stratégie chiffrée, hiérarchisée et argumentée, en architecture ouverte et sans conflit d'intérêts.</p>
-          </div>
-          <div class="approach-step">
-            <div class="approach-step__num">IV.</div>
-            <h3>Suivi</h3>
-            <p>Mise en œuvre coordonnée puis revue annuelle pour adapter la stratégie aux évolutions de votre vie et des marchés.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- =========================================================
          CTA final
