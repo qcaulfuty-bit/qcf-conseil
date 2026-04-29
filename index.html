@@ -31,25 +31,51 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 
-  <!-- Schema.org : FinancialService -->
+  <!-- Schema.org : FinancialService + LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
+    "@type": ["FinancialService", "LocalBusiness"],
     "name": "Alvest",
-    "description": "Cabinet indépendant de conseil en gestion de patrimoine : bilan patrimonial, optimisation fiscale, transmission, investissement immobilier et placements financiers.",
+    "alternateName": "Alvest Gestion privée",
+    "description": "Cabinet indépendant de conseil en gestion de patrimoine. Quentin Caulfuty — Conseiller en Investissements Financiers (ORIAS 24005716).",
     "url": "https://www.alvest.fr/",
     "image": "https://www.alvest.fr/assets/img/og-cover.svg",
+    "logo": "https://www.alvest.fr/assets/img/favicon.svg",
+    "founder": {
+      "@type": "Person",
+      "name": "Quentin Caulfuty",
+      "jobTitle": "Fondateur — Conseil en Gestion de Patrimoine Indépendant"
+    },
     "areaServed": "FR",
     "priceRange": "€€€",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "[ADRESSE]",
+      "streetAddress": "40 Boulevard Victor Hugo",
+      "postalCode": "92200",
+      "addressLocality": "Neuilly-sur-Seine",
+      "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
-    "telephone": "[TELEPHONE]",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.8848",
+      "longitude": "2.2706"
+    },
+    "telephone": "+33603655806",
     "email": "[EMAIL]",
-    "sameAs": ["[LINKEDIN_URL]"]
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "sameAs": ["[LINKEDIN_URL]"],
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "ORIAS",
+      "value": "24005716"
+    }
   }
   </script>
 
@@ -264,49 +290,34 @@
     <!-- =========================================================
          Partenaires — ticker horizontal infini
          ========================================================= -->
-    <section class="partners" aria-label="Nos partenaires sélectionnés">
+    <section class="partners" aria-label="Nos partenaires institutionnels">
       <div class="container">
-        <span class="section-kicker">Nos partenaires sélectionnés</span>
+        <span class="section-kicker">Nos partenaires institutionnels</span>
       </div>
 
       <div class="partners__ticker">
         <ul class="partners__track">
-          <!-- Assurance-vie Luxembourg -->
-          <li class="partner"><img src="https://logo.clearbit.com/wealins.com" alt="Wealins" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wealins</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/lmep.lu" alt="La Mondiale Europartner" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>La Mondiale Europartner</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/cardif.com" alt="Cardif Luxembourg" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Cardif Luxembourg</span></li>
-          <!-- Assureurs France -->
-          <li class="partner"><img src="https://logo.clearbit.com/generali.fr" alt="Generali Patrimoine" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Generali Patrimoine</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/spirica.fr" alt="Spirica" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Spirica</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/apicil.com" alt="Apicil" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Apicil</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/swisslife.fr" alt="Swiss Life" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Swiss Life</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/ag2rlamondiale.fr" alt="AG2R La Mondiale" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>AG2R La Mondiale</span></li>
-          <!-- Private Equity -->
-          <li class="partner"><img src="https://logo.clearbit.com/altaroc.com" alt="Altaroc" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Altaroc</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/inter-invest.fr" alt="Inter Invest" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Inter Invest</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/eurazeo.com" alt="Eurazeo" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Eurazeo</span></li>
-          <!-- SCPI & Immobilier -->
-          <li class="partner"><img src="https://logo.clearbit.com/edmond-de-rothschild.com" alt="Edmond de Rothschild REIM" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Edmond de Rothschild REIM</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/alderan-scpi.com" alt="Alderan" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Alderan</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/atland-voisin.com" alt="Atland Voisin" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Atland Voisin</span></li>
-          <li class="partner"><img src="https://logo.clearbit.com/wemo-one.com" alt="Wemo One" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wemo One</span></li>
+          <!-- 9 partenaires institutionnels -->
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Carmignac.jpg" alt="Carmignac" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Carmignac</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Ishares.jpg" alt="iShares" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>iShares</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Amundi.jpg" alt="Amundi" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Amundi</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Ark%C3%A9a.jpg" alt="Arkéa" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Arkéa</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Wealins.jpg" alt="Wealins" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wealins</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Atlandvoisin.jpg" alt="Atland Voisin" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Atland Voisin</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/AG2R.jpg" alt="AG2R La Mondiale" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>AG2R La Mondiale</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Archinvest.jpg" alt="Archinvest" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Archinvest</span></li>
+          <li class="partner"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Generali..jpg" alt="Generali" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Generali</span></li>
 
           <!-- Duplicata pour boucle sans couture -->
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/wealins.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wealins</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/lmep.lu" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>La Mondiale Europartner</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/cardif.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Cardif Luxembourg</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/generali.fr" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Generali Patrimoine</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/spirica.fr" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Spirica</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/apicil.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Apicil</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/swisslife.fr" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Swiss Life</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/ag2rlamondiale.fr" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>AG2R La Mondiale</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/altaroc.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Altaroc</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/inter-invest.fr" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Inter Invest</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/eurazeo.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Eurazeo</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/edmond-de-rothschild.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Edmond de Rothschild REIM</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/alderan-scpi.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Alderan</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/atland-voisin.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Atland Voisin</span></li>
-          <li class="partner" aria-hidden="true"><img src="https://logo.clearbit.com/wemo-one.com" alt="" class="partner__logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wemo One</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Carmignac.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Carmignac</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Ishares.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>iShares</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Amundi.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Amundi</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Ark%C3%A9a.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Arkéa</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Wealins.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Wealins</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Atlandvoisin.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Atland Voisin</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/AG2R.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>AG2R La Mondiale</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Archinvest.jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Archinvest</span></li>
+          <li class="partner" aria-hidden="true"><img src="https://g5ixwryy1a4q0twy.public.blob.vercel-storage.com/Generali..jpg" alt="" class="partner__logo" loading="lazy" onerror="this.style.display=&apos;none&apos;;this.nextElementSibling.hidden=false;"><span class="partner__name" hidden>Generali</span></li>
         </ul>
       </div>
     </section>
@@ -354,10 +365,10 @@
 
         <div class="footer__col">
           <h4>Contact</h4>
-          <ul>
-            <li>[ADRESSE]</li>
-            <li><a href="tel:[TELEPHONE]">[TELEPHONE]</a></li>
-            <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+          <ul class="footer__contact">
+            <li><svg class="footer__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span>40 Boulevard Victor Hugo<br>92200 Neuilly-sur-Seine</span></li>
+            <li><svg class="footer__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13 1 .37 1.96.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.85.33 1.81.57 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="tel:+33603655806">06 03 65 58 06</a></li>
+            <li><svg class="footer__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><a href="mailto:[EMAIL]">[EMAIL]</a></li>
           </ul>
         </div>
 
