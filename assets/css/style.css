@@ -905,10 +905,13 @@ ul {
 }
 
 .process-step {
+  display: block;
   background: var(--c-white);
   border-top: 2px solid var(--c-or);
   padding: 36px 32px;
   border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
   transition: transform var(--t-med), box-shadow var(--t-med);
 }
 
@@ -1356,6 +1359,12 @@ ul {
 }
 
 .service-detail:first-of-type { border-top: 0; }
+
+.service-detail--alt {
+  background: var(--c-creme-dark);
+}
+.service-detail--alt + .service-detail,
+.service-detail + .service-detail--alt { border-top: 0; }
 
 .service-detail__head {
   display: flex;

@@ -5,6 +5,8 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/cabinet", "destination": "/about", "permanent": true },
+    { "source": "/conseil-alvest", "destination": "/methode", "permanent": true },
+    { "source": "/conseil", "destination": "/methode", "permanent": true },
     { "source": "/mentions", "destination": "/mentions-legales", "permanent": true },
     { "source": "/rdv", "destination": "/contact", "permanent": false },
     { "source": "/rendez-vous", "destination": "/contact", "permanent": false }
