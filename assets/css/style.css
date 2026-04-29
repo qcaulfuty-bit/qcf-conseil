@@ -12,6 +12,7 @@
   --c-marine-10: rgba(10, 25, 47, 0.1);
   --c-or: #C5A059;
   --c-or-dark: #A88339;
+  --c-or-light: #E0BC7A;
   --c-creme: #F8F9FA;
   --c-creme-dark: #EAEDF1;
   --c-text: #1a1a1a;
@@ -527,7 +528,7 @@ ul {
   padding: 160px 0 120px;
   color: var(--c-white);
   background:
-    linear-gradient(180deg, rgba(14, 42, 71, 0.55) 0%, rgba(14, 42, 71, 0.85) 100%),
+    linear-gradient(180deg, rgba(10, 25, 47, 0.62) 0%, rgba(10, 25, 47, 0.92) 100%),
     url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=2400&q=80') center/cover no-repeat;
   background-attachment: scroll;
   overflow: hidden;
@@ -554,18 +555,20 @@ ul {
   font-size: clamp(2.4rem, 5.2vw, 3.8rem);
   margin-bottom: 18px;
   color: var(--c-white);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .hero__title em {
   font-style: italic;
-  color: var(--c-or);
+  color: var(--c-or-light);
 }
 
 .hero__lede {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.92);
   max-width: 620px;
   margin: 0 auto 36px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero__cta {
@@ -577,14 +580,14 @@ ul {
 
 .hero__regulatory {
   margin-top: 64px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .hero__lede strong {
-  color: var(--c-or);
+  color: var(--c-or-light);
   font-weight: 700;
 }
 
@@ -2630,4 +2633,169 @@ ul {
 
 .partners .container {
   margin-bottom: 44px;
+}
+
+/* =========================================================
+   Section Approche home — timeline verticale connectée
+   3 parties : Audit / Ingénierie / Suivi & Veille
+   Design : ligne dorée verticale reliant 3 grands chiffres serif
+   ========================================================= */
+.approche-home {
+  padding: 112px 0;
+  background: var(--c-creme);
+}
+
+.approche-home__head {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.approche-home__cta {
+  text-align: center;
+  margin-top: 64px;
+}
+
+.timeline-flow {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  max-width: 880px;
+}
+
+/* Ligne dorée verticale reliant les 3 étapes */
+.timeline-flow::before {
+  content: "";
+  position: absolute;
+  left: 60px;
+  top: 50px;
+  bottom: 50px;
+  width: 1px;
+  background: linear-gradient(180deg,
+    var(--c-or) 0%,
+    var(--c-or) 50%,
+    rgba(197, 160, 89, 0.25) 100%);
+}
+
+.timeline-flow__step {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 88px;
+}
+
+.timeline-flow__step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-flow__num {
+  position: relative;
+  z-index: 1;
+  font-family: var(--ff-display);
+  font-size: 4.4rem;
+  font-weight: 500;
+  color: var(--c-or);
+  line-height: 1;
+  text-align: center;
+  padding: 20px 0;
+  background: var(--c-creme);
+  letter-spacing: 0.02em;
+}
+
+.timeline-flow__body {
+  padding-top: 24px;
+}
+
+.timeline-flow__label {
+  display: block;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-or-dark);
+  margin-bottom: 12px;
+}
+
+.timeline-flow__body h3 {
+  font-family: var(--ff-display);
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 500;
+  margin: 0 0 18px;
+  color: var(--c-marine);
+}
+
+.timeline-flow__lede {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--c-text);
+  margin: 0 0 22px;
+}
+
+.timeline-flow__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-flow__list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--c-text);
+}
+
+.timeline-flow__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 14px;
+  height: 1px;
+  background: var(--c-or);
+}
+
+@media (max-width: 760px) {
+  .approche-home { padding: 80px 0; }
+  .approche-home__head { margin-bottom: 56px; }
+  .timeline-flow::before {
+    left: 28px;
+    top: 36px;
+    bottom: 36px;
+  }
+  .timeline-flow__step {
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .timeline-flow__num {
+    font-size: 2.4rem;
+    padding: 8px 0;
+  }
+  .timeline-flow__body {
+    padding-top: 12px;
+  }
+  .timeline-flow__body h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Section manifeste sur /methode (entre page-header et 1er service) */
+.manifeste-section {
+  padding: 64px 0 32px;
+  background: var(--c-white);
+}
+
+.manifeste-section .approche__sub {
+  font-family: var(--ff-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-or-dark);
+  text-align: center;
+  margin: 0 0 28px;
 }
