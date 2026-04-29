@@ -2511,3 +2511,55 @@ ul {
   .callout { padding: 22px 24px; }
   .fiscal-table th, .fiscal-table td { padding: 12px 14px; font-size: 0.88rem; }
 }
+
+/* =========================================================
+   Back-to-top button (commit 3)
+   ========================================================= */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--c-marine);
+  color: var(--c-or);
+  border: 1px solid var(--c-or);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+}
+
+.back-to-top svg {
+  width: 16px;
+  height: 16px;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--c-or);
+  color: var(--c-marine);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--c-or);
+  outline-offset: 3px;
+}
+
+@media (max-width: 540px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+  }
+}
