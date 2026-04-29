@@ -1819,3 +1819,246 @@ ul {
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { width: 100%; }
 }
+
+/* =========================================================
+   Page /nos-solutions — hero cinématographique, sticky nav,
+   6 blocs full-width image + body alterné blanc / cream
+   ========================================================= */
+
+/* --- Hero plein écran, image + voile bleu nuit --- */
+.solutions-hero {
+  position: relative;
+  height: 86vh;
+  min-height: 540px;
+  color: var(--c-white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.solutions-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  transition: transform 1.4s ease;
+}
+
+.solutions-hero:hover .solutions-hero__bg {
+  transform: scale(1.06);
+}
+
+.solutions-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.5) 0%, rgba(10, 25, 47, 0.85) 100%);
+}
+
+.solutions-hero__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.solutions-hero__kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--c-or);
+  margin-bottom: 22px;
+}
+
+.solutions-hero h1 {
+  color: var(--c-white);
+  font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+  margin: 0 auto 18px;
+  max-width: 900px;
+}
+
+.solutions-hero p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --- Sticky nav secondaire --- */
+.solutions-stickynav {
+  position: sticky;
+  top: 76px;
+  z-index: 40;
+  background: #121D2C;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.28);
+}
+
+.solutions-stickynav__list {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: var(--max-w);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.solutions-stickynav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.solutions-stickynav__list li {
+  flex-shrink: 0;
+}
+
+.solutions-stickynav__list a {
+  display: block;
+  padding: 18px 22px;
+  font-family: var(--ff-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.solutions-stickynav__list a:hover,
+.solutions-stickynav__list a.is-active {
+  color: var(--c-or);
+  border-bottom-color: var(--c-or);
+}
+
+@media (max-width: 820px) {
+  .solutions-stickynav {
+    top: 68px;
+  }
+  .solutions-stickynav__list {
+    justify-content: flex-start;
+    padding: 0 8px;
+  }
+  .solutions-stickynav__list a {
+    padding: 14px 12px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* --- Blocs solution : banner cinématographique + body --- */
+.solution-block {
+  scroll-margin-top: 144px;
+}
+
+.solution-block__banner {
+  position: relative;
+  height: 460px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  color: var(--c-white);
+  overflow: hidden;
+}
+
+.solution-block__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.35) 0%, rgba(10, 25, 47, 0.85) 100%);
+  transition: background 0.5s ease;
+}
+
+.solution-block__banner:hover .solution-block__overlay {
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.25) 0%, rgba(10, 25, 47, 0.78) 100%);
+}
+
+.solution-block__banner-inner {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 56px;
+}
+
+.solution-block__num {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: var(--c-or);
+  margin-bottom: 14px;
+}
+
+.solution-block__banner h2 {
+  color: var(--c-white);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin: 0 0 10px;
+  max-width: 780px;
+  line-height: 1.18;
+}
+
+.solution-block__banner p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.1rem;
+  max-width: 580px;
+  margin: 0;
+}
+
+.solution-block__body {
+  background: var(--c-white);
+  padding: 88px 0;
+}
+
+.solution-block--alt .solution-block__body {
+  background: var(--c-creme);
+}
+
+.solution-block__lede {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--c-text);
+  margin: 0 0 32px;
+  max-width: 720px;
+}
+
+.solution-block__placeholder {
+  margin: 32px 0 0;
+  padding: 22px 24px;
+  background: rgba(10, 25, 47, 0.04);
+  border-left: 2px solid var(--c-or);
+  color: var(--c-muted);
+  font-size: 0.92rem;
+}
+
+/* Bannière de transition placeholder (commit suivant) */
+.solutions-quote {
+  padding: 28px;
+  background: var(--c-creme-dark);
+  text-align: center;
+  color: var(--c-muted);
+}
+
+.solutions-quote__placeholder {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 820px) {
+  .solutions-hero {
+    height: 78vh;
+    min-height: 420px;
+  }
+  .solution-block__banner {
+    height: 380px;
+  }
+  .solution-block__banner-inner {
+    padding-bottom: 36px;
+  }
+  .solution-block__body {
+    padding: 60px 0;
+  }
+}
