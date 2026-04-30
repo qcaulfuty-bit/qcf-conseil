@@ -765,14 +765,6 @@ ul {
 .service-card--premium .service-card__list li { color: rgba(248, 245, 239, 0.85); }
 .service-card--premium .service-card__list li strong { color: var(--c-or); }
 
-/* Esperluette Playfair italique (titre "Transmission & succession") */
-.service-card__amp {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--c-or-dark);
-  padding: 0 0.05em;
-}
-
 /* Responsive — stack vertical, Placements premier sur mobile */
 @media (max-width: 900px) {
   .services-grid-editorial {
@@ -2798,4 +2790,88 @@ ul {
   color: var(--c-or-dark);
   text-align: center;
   margin: 0 0 28px;
+}
+
+/* =========================================================
+   Email link header + bloc email footer (remplacent LinkedIn)
+   ========================================================= */
+.nav__email-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--c-marine);
+  border: 1px solid transparent;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.nav__email-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.nav__email-link:hover {
+  color: var(--c-or-dark);
+  border-color: rgba(197, 160, 89, 0.5);
+  background: rgba(197, 160, 89, 0.06);
+}
+
+.nav__email-link:focus-visible {
+  outline: 2px solid var(--c-or);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .nav__item--email {
+    border-top: 1px solid var(--c-line);
+  }
+  .nav__email-link {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    padding: 14px 24px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .nav__email-link::after {
+    content: "qcaulfuty@alvest.fr";
+    font-family: var(--ff-body);
+    font-size: 0.92rem;
+  }
+}
+
+/* Footer email block (remplace LinkedIn) */
+.footer__social--email {
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+.footer__social--email:hover {
+  background: var(--c-or);
+  color: var(--c-marine);
+  border-color: var(--c-or);
+}
+
+.footer__social--email svg {
+  width: 22px;
+  height: 22px;
+}
+
+.footer__email-text {
+  margin: 14px 0 0;
+  font-size: 0.88rem;
+  color: rgba(248, 249, 250, 0.78);
+}
+
+.footer__email-text a {
+  color: rgba(248, 249, 250, 0.92);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.footer__email-text a:hover {
+  color: var(--c-or);
+  border-bottom-color: var(--c-or);
 }
