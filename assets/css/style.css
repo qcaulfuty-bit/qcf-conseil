@@ -552,22 +552,28 @@ ul {
 }
 
 .hero__title {
+  font-family: var(--ff-display);
   font-size: clamp(2.4rem, 5.2vw, 3.8rem);
-  margin-bottom: 18px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: 0.005em;
+  margin-bottom: 28px;
   color: var(--c-white);
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 .hero__title em {
   font-style: italic;
-  color: var(--c-or-light);
+  font-weight: 400;
+  color: var(--c-white);
 }
 
 .hero__lede {
   font-size: 1.15rem;
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 620px;
-  margin: 0 auto 36px;
+  max-width: 640px;
+  margin: 0 auto 44px;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
@@ -579,7 +585,7 @@ ul {
 }
 
 .hero__regulatory {
-  margin-top: 64px;
+  margin-top: 72px;
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.06em;
@@ -587,8 +593,12 @@ ul {
 }
 
 .hero__lede strong {
-  color: var(--c-or-light);
+  color: var(--c-white);
   font-weight: 700;
+}
+
+.hero__cta {
+  gap: 16px;
 }
 
 /* Bouton outline réinventé pour le fond sombre du hero */
@@ -2890,4 +2900,43 @@ ul {
    ========================================================= */
 .section--paper {
   background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+/* =========================================================
+   Hero — boutons d'action premium (or #b38e5d Alvest)
+   Override local pour garder le doré global var(--c-or) ailleurs
+   ========================================================= */
+.hero .btn {
+  padding: 16px 34px;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  border-width: 1.5px;
+  border-style: solid;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast), transform var(--t-fast);
+}
+
+.hero .btn--gold {
+  background: #b38e5d;
+  color: var(--c-marine);
+  border-color: #b38e5d;
+}
+
+.hero .btn--gold:hover {
+  background: #9c7a4d;
+  border-color: #9c7a4d;
+  color: var(--c-marine);
+  transform: translateY(-1px);
+}
+
+.hero .btn--outline-gold {
+  background: transparent;
+  color: #b38e5d;
+  border-color: #b38e5d;
+}
+
+.hero .btn--outline-gold:hover {
+  background: #b38e5d;
+  color: var(--c-marine);
+  border-color: #b38e5d;
 }
