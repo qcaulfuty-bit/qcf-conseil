@@ -2942,44 +2942,23 @@ ul {
 }
 
 /* =========================================================
-   Bloc déroulant "Nos accréditations" (about.html)
-   <details>/<summary> natif HTML5, zéro JS
+   Section "Nos accréditations" (about.html)
+   Bloc statique avec en-tête + grille de logos officiels
    ========================================================= */
 .accreditations {
   background: var(--c-white);
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: box-shadow var(--t-fast);
+  box-shadow: var(--shadow-soft);
 }
 
-.accreditations[open] {
-  box-shadow: var(--shadow-lift);
-}
-
-.accreditations__summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 28px 36px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  user-select: none;
-  transition: background var(--t-fast);
-}
-
-.accreditations__summary::-webkit-details-marker { display: none; }
-.accreditations__summary::marker { display: none; }
-
-.accreditations__summary:hover {
-  background: var(--c-creme);
-}
-
-.accreditations__label {
+.accreditations__header {
+  padding: 28px 36px 24px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  border-bottom: 1px solid var(--c-line);
 }
 
 .accreditations__eyebrow {
@@ -2996,25 +2975,11 @@ ul {
   font-size: 1.45rem;
   color: var(--c-marine);
   line-height: 1.2;
-}
-
-.accreditations__chevron {
-  width: 18px;
-  height: 12px;
-  color: var(--c-or-dark);
-  flex-shrink: 0;
-  transition: transform var(--t-med);
-}
-
-.accreditations[open] .accreditations__chevron {
-  transform: rotate(180deg);
+  margin: 0;
 }
 
 .accreditations__body {
-  padding: 0 36px 36px;
-  border-top: 1px solid var(--c-line);
-  padding-top: 28px;
-  margin-top: 0;
+  padding: 28px 36px 36px;
 }
 
 .accreditations__lede {
